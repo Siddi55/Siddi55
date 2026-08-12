@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills — Sidra Ramzan</title>
+<meta name="description" content="Skills across website management, SEO, content, and design — and what's currently being learned.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232A3EFF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   TOKENS — light glass
+   ========================================================= */
+:root{
+  --canvas:#F6F6FA;
+  --ink:#14151F;
+  --ink-soft:rgba(20,21,31,.66);
+  --white:#FFFFFF;
+  --indigo:#3B4CFF;
+  --indigo-soft:rgba(59,76,255,.12);
+  --coral:#FF6B4A;
+  --coral-soft:rgba(255,107,74,.1);
+  --line:rgba(20,21,31,.1);
+  --glass:rgba(255,255,255,.55);
+  --glass-strong:rgba(255,255,255,.72);
+  --glass-border:rgba(255,255,255,.7);
+  --content-w:720px;
+  --max-w:1240px;
+  --radius:20px;
+  --radius-sm:14px;
+  --font-display:'Space Grotesk','Inter',sans-serif;
+  --font-body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:'JetBrains Mono','Courier New', monospace;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; background:var(--canvas); color:var(--ink);
+  font-family:var(--font-body); font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  position:relative;
+}
+body::before{
+  content:'';
+  position:fixed; inset:0; z-index:-1;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(59,76,255,.16), transparent 45%),
+    radial-gradient(circle at 85% 12%, rgba(255,107,74,.14), transparent 45%),
+    radial-gradient(circle at 55% 85%, rgba(150,90,255,.12), transparent 50%),
+    radial-gradient(circle at 8% 88%, rgba(20,180,160,.08), transparent 45%),
+    var(--canvas);
+  animation:drift 22s ease-in-out infinite;
+}
+@keyframes drift{
+  0%,100%{ transform:scale(1) translate(0,0); }
+  50%{ transform:scale(1.08) translate(-1.5%,1.5%); }
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; }
+ul{ margin:0; padding:0; list-style:none; }
+h1,h2,h3,p{ margin:0; }
+button{ font:inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+  outline:2px solid var(--indigo); outline-offset:3px;
+}
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  body::before{ animation:none; }
+  *,*::before,*::after{
+    animation-duration:0.01ms !important; animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important; scroll-behavior:auto !important;
+  }
+}
+
+/* =========================================================
+   TYPE
+   ========================================================= */
+h1{ font-family:var(--font-display); font-weight:700; font-size:clamp(2.2rem,5.5vw,4rem); line-height:1.05; letter-spacing:-0.02em; color:inherit; }
+h2{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,3.2vw,2.2rem); line-height:1.15; letter-spacing:-0.01em; color:inherit; }
+h3{ font-family:var(--font-display); font-weight:600; font-size:1.15rem; color:inherit; }
+p{ color:var(--ink-soft); }
+.lede{ font-size:1.08rem; color:var(--ink-soft); max-width:58ch; }
+.kicker{ font-family:var(--font-mono); font-size:0.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); }
+
+/* =========================================================
+   SHELL / LAYOUT
+   ========================================================= */
+.wrap{ max-width:var(--max-w); margin:0 auto; padding:0 24px; }
+.section{ padding:48px 24px; }
+.section-head{ max-width:var(--content-w); margin:0 auto 32px; }
+.narrow{ max-width:var(--content-w); margin:0 auto; }
+
+/* =========================================================
+   HEADER / NAV
+   ========================================================= */
+.site-header{ position:sticky; top:0; z-index:50; background:rgba(246,246,250,.72); backdrop-filter:blur(18px) saturate(160%); -webkit-backdrop-filter:blur(18px) saturate(160%); border-bottom:1px solid var(--line); }
+.header-inner{ max-width:var(--max-w); margin:0 auto; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; gap:24px; position:relative; }
+.brand{ display:flex; align-items:center; gap:12px; text-decoration:none; }
+.brand-mark{ width:38px; height:38px; border-radius:12px; background:linear-gradient(135deg,var(--indigo),var(--coral)); color:#fff; font-family:var(--font-display); font-weight:700; font-size:0.85rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 8px 20px rgba(59,76,255,.28); }
+.brand-text{ display:flex; flex-direction:column; line-height:1.25; }
+.brand-name{ font-family:var(--font-display); font-weight:600; font-size:1rem; color:var(--ink); }
+.brand-role{ font-family:var(--font-mono); font-size:0.62rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); }
+
+.site-nav{ display:flex; gap:8px; }
+.site-nav a{ text-decoration:none; font-size:0.9rem; font-weight:500; color:var(--ink-soft); padding:9px 16px; border-radius:100px; }
+.site-nav a.active, .site-nav a:hover{ color:var(--ink); background:rgba(20,21,31,.06); }
+
+.nav-toggle{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; }
+.nav-toggle span{ width:22px; height:2px; background:var(--ink); display:block; }
+@media (max-width:820px){
+  .nav-toggle{ display:flex; }
+  .site-nav{ position:absolute; top:100%; left:0; right:0; background:rgba(246,246,250,.96); backdrop-filter:blur(18px); flex-direction:column; padding:12px 24px 20px; border-bottom:1px solid var(--line); display:none; gap:8px; }
+  .site-nav.is-open{ display:flex; }
+  .site-nav a{ border-radius:12px; padding:12px 14px; }
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+.btn{ font-family:var(--font-body); font-weight:600; font-size:0.94rem; padding:13px 24px; border-radius:100px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:transform .15s ease, opacity .15s ease, background .15s ease; cursor:pointer; border:none; }
+.btn-primary{ background:var(--ink); color:#fff; }
+.btn-primary:hover{ transform:translateY(-2px); opacity:.88; }
+.btn-outline{ background:rgba(255,255,255,.1); color:#fff; border:1.5px solid rgba(255,255,255,.35); backdrop-filter:blur(8px); }
+.btn-outline:hover{ transform:translateY(-2px); background:rgba(255,255,255,.2); }
+.btn-light{ background:#fff; color:var(--ink); }
+.btn-light:hover{ transform:translateY(-2px); opacity:.9; }
+
+/* =========================================================
+   BENTO GRID — light frosted tiles + dark anchor tiles
+   ========================================================= */
+.bento{ display:grid; grid-template-columns:repeat(4, 1fr); grid-auto-rows:minmax(120px,auto); gap:18px; }
+.tile{
+  border-radius:var(--radius); padding:32px; position:relative; overflow:hidden;
+  display:flex; flex-direction:column; justify-content:space-between; gap:16px;
+  background:var(--glass);
+  backdrop-filter:blur(22px) saturate(160%);
+  -webkit-backdrop-filter:blur(22px) saturate(160%);
+  border:1px solid var(--glass-border);
+  box-shadow:0 8px 32px rgba(20,21,31,.1), inset 0 1px 0 rgba(255,255,255,.5);
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+  color:var(--ink);
+}
+.tile:hover{
+  transform:translateY(-6px);
+  background:var(--glass-strong);
+  box-shadow:0 24px 56px rgba(20,21,31,.16), inset 0 1px 0 rgba(255,255,255,.6);
+}
+.tile a.tile-link{ position:absolute; inset:0; z-index:2; }
+
+.tile-2x2{ grid-column:span 2; grid-row:span 2; }
+.tile-2x1{ grid-column:span 2; }
+.tile-1x1{ grid-column:span 1; }
+.tile-4x1{ grid-column:span 4; }
+
+@media (max-width:900px){
+  .bento{ grid-template-columns:repeat(2,1fr); }
+  .tile-4x1{ grid-column:span 2; }
+}
+@media (max-width:560px){
+  .bento{ grid-template-columns:1fr; }
+  .tile-2x2,.tile-2x1,.tile-1x1,.tile-4x1{ grid-column:span 1; }
+}
+
+/* colored variants — dark/saturated ones need white text, light ones keep dark text */
+.tile-dark{ background:rgba(20,21,31,.9); border-color:rgba(255,255,255,.1); }
+.tile-dark:hover{ background:rgba(20,21,31,.95); }
+.tile-gradient{ background:linear-gradient(135deg, rgba(59,76,255,.88), rgba(255,107,74,.78)); border-color:rgba(255,255,255,.3); box-shadow:0 8px 32px rgba(20,21,31,.1), 0 0 60px rgba(59,76,255,.2); }
+.tile-white{ background:rgba(255,255,255,.62); border-color:rgba(20,21,31,.08); }
+.tile-white:hover{ background:rgba(255,255,255,.8); }
+.tile-indigo{ background:rgba(107,124,163,.72); border-color:rgba(255,255,255,.25); }
+.tile-indigo:hover{ background:rgba(107,124,163,.82); }
+.tile-coral{ background:rgba(255,107,74,.84); border-color:rgba(255,255,255,.25); }
+.tile-tint{ background:rgba(59,76,255,.1); border-color:rgba(59,76,255,.18); }
+.tile-tint-coral{ background:rgba(255,107,74,.08); border-color:rgba(255,107,74,.16); }
+
+.tile h2, .tile h3{ position:relative; z-index:1; }
+.tile p{ position:relative; z-index:1; }
+/* dark/saturated tiles need light text — overrides the default dark-ink text (source order matters, keep these below the base rules above) */
+.tile-dark, .tile-gradient, .tile-indigo, .tile-coral{ color:#fff; }
+.tile-dark p, .tile-gradient p, .tile-indigo p, .tile-coral p{ color:rgba(255,255,255,.82); }
+.tile-dark .kicker, .tile-gradient .kicker, .tile-indigo .kicker, .tile-coral .kicker{ color:rgba(255,255,255,.68); }
+
+.tile-icon{ width:42px; height:42px; border-radius:12px; background:color-mix(in srgb, currentColor 14%, transparent); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+
+.tile-tags{ display:flex; flex-wrap:wrap; gap:8px; position:relative; z-index:1; }
+.tile-tag{ font-family:var(--font-mono); font-size:0.66rem; text-transform:uppercase; letter-spacing:.04em; padding:5px 10px; border-radius:100px; background:color-mix(in srgb, currentColor 14%, transparent); }
+
+.dot{ width:8px; height:8px; border-radius:50%; background:currentColor; display:inline-block; flex-shrink:0; }
+@media (prefers-reduced-motion: no-preference){ .dot.pulse{ animation:pulse 2s ease-in-out infinite; } }
+@keyframes pulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(255,255,255,.5); } 50%{ box-shadow:0 0 0 6px rgba(255,255,255,0); } }
+
+/* =========================================================
+   HERO WAVEFORM — animated video-editing motif (no real file needed)
+   ========================================================= */
+.hero-waveform{ position:absolute; left:0; right:0; bottom:0; height:56px; display:flex; align-items:flex-end; gap:3px; padding:0 32px 18px; z-index:0; opacity:.55; pointer-events:none; }
+.hero-waveform span{ flex:1; background:linear-gradient(180deg, var(--indigo), var(--coral)); border-radius:2px; min-height:6px; transform-origin:bottom; }
+@media (prefers-reduced-motion: no-preference){
+  .hero-waveform span{ animation:wave 1.6s ease-in-out infinite; }
+}
+@media (prefers-reduced-motion: reduce){
+  .hero-waveform span{ height:40%; }
+}
+@keyframes wave{ 0%,100%{ transform:scaleY(.35); } 50%{ transform:scaleY(1); } }
+.hero-waveform span:nth-child(3n){ animation-duration:1.3s; }
+.hero-waveform span:nth-child(3n+1){ animation-duration:1.9s; animation-delay:.15s; }
+.hero-waveform span:nth-child(3n+2){ animation-duration:1.5s; animation-delay:.3s; }
+.hero-waveform span:nth-child(4n){ animation-delay:.45s; }
+.hero-waveform span:nth-child(5n){ animation-delay:.6s; }
+
+.play-chip{ width:22px; height:22px; border-radius:50%; background:color-mix(in srgb, currentColor 16%, transparent); display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; }
+
+/* =========================================================
+   SCREENSHOT PLACEHOLDER
+   ========================================================= */
+.shot{ border-radius:var(--radius-sm); background:color-mix(in srgb, currentColor 5%, transparent); border:1.5px dashed color-mix(in srgb, currentColor 22%, transparent); aspect-ratio:16/10; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:20px; text-align:center; position:relative; z-index:1; }
+.shot svg{ opacity:.55; }
+.shot span{ font-family:var(--font-mono); font-size:0.7rem; opacity:.85; max-width:26ch; }
+
+/* =========================================================
+   NARRATIVE PROSE
+   ========================================================= */
+.prose{ display:flex; flex-direction:column; gap:20px; }
+.prose p{ font-size:1.02rem; color:var(--ink-soft); max-width:66ch; }
+.prose strong{ color:var(--ink); }
+
+.divider{ border:none; border-top:1px solid var(--line); margin:0; }
+
+.note{ background:rgba(255,255,255,.5); backdrop-filter:blur(14px); border:1px solid var(--line); border-left:3px solid var(--indigo); border-radius:var(--radius-sm); padding:16px 18px; }
+.note .label{ display:block; font-family:var(--font-mono); font-size:0.64rem; letter-spacing:.08em; text-transform:uppercase; color:var(--indigo); margin-bottom:6px; }
+.note p{ font-size:0.85rem; color:var(--ink-soft); margin:0; }
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+.timeline{ display:flex; flex-direction:column; gap:0; }
+.timeline-item{ display:grid; grid-template-columns:100px 1fr; gap:20px; padding:20px 0; border-bottom:1px solid var(--line); }
+.timeline-item:last-child{ border-bottom:none; }
+.timeline-date{ font-family:var(--font-mono); font-size:0.72rem; text-transform:uppercase; letter-spacing:.05em; color:var(--indigo); }
+@media (max-width:600px){ .timeline-item{ grid-template-columns:1fr; gap:4px; } }
+
+/* =========================================================
+   SKILL LIST
+   ========================================================= */
+.skill-list{ display:flex; flex-direction:column; gap:2px; position:relative; z-index:1; }
+.skill-list li{ padding:7px 0; font-size:0.92rem; border-bottom:1px solid color-mix(in srgb, currentColor 12%, transparent); }
+.skill-list li:last-child{ border-bottom:none; }
+
+/* =========================================================
+   FORM (used inside the always-dark contact tile)
+   ========================================================= */
+.form-field{ display:flex; flex-direction:column; gap:6px; margin-bottom:16px; position:relative; z-index:1; }
+.form-field label{ font-family:var(--font-mono); font-size:0.66rem; text-transform:uppercase; letter-spacing:.05em; opacity:.8; }
+.form-field input, .form-field textarea{ font-family:var(--font-body); font-size:0.95rem; padding:12px 14px; border:none; border-radius:12px; background:rgba(255,255,255,.14); color:#fff; width:100%; }
+.form-field input::placeholder, .form-field textarea::placeholder{ color:rgba(255,255,255,.5); }
+.form-field input:focus, .form-field textarea:focus{ outline:2px solid rgba(255,255,255,.6); }
+
+.contact-row{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 0; border-bottom:1px solid var(--line); text-decoration:none; }
+.contact-row:last-child{ border-bottom:none; }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.site-footer{ padding:32px 24px 40px; }
+.footer-inner{ max-width:var(--max-w); margin:0 auto; display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:center; font-size:0.85rem; color:var(--ink-soft); }
+.footer-links{ display:flex; gap:20px; }
+.footer-links a{ text-decoration:none; }
+.footer-links a:hover{ color:var(--indigo); }
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+.reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
+.reveal.is-visible{ opacity:1; transform:none; }
+
+/* =========================================================
+   UTILITIES
+   ========================================================= */
+.mt-8{ margin-top:8px; } .mt-16{ margin-top:16px; } .mt-24{ margin-top:24px; }
+.mt-32{ margin-top:32px; } .mt-48{ margin-top:48px; } .mt-64{ margin-top:64px; }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">SR</span>
+      <span class="brand-text">
+        <span class="brand-name">Sidra Ramzan</span>
+        <span class="brand-role">Content · SEO · Design</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html" class="active" aria-current="page">Skills</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker" style="color:var(--ink-soft); opacity:1;">Skills</span>
+        <h1 class="mt-16">What I can actually do — and what I'm still learning.</h1>
+        <p class="lede mt-16">No skill bars, no invented percentages. Just an honest, grouped list.</p>
+      </div>
+
+      <div class="bento reveal">
+        <div class="tile tile-dark tile-2x1">
+          <div class="tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
+          </div>
+          <div>
+            <h3>Website &amp; SEO</h3>
+            <ul class="skill-list mt-16">
+              <li>WordPress site management</li>
+              <li>On-page SEO</li>
+              <li>Technical SEO basics</li>
+              <li>Keyword research</li>
+              <li>Search Console &amp; analytics reading</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tile tile-indigo tile-1x1">
+          <div class="tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <div>
+            <h3>Content</h3>
+            <ul class="skill-list mt-16">
+              <li>Research-based writing</li>
+              <li>Article structure &amp; editing</li>
+              <li>Content strategy &amp; planning</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tile tile-coral tile-1x1">
+          <div class="tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.5-.7 1.5-1.5 0-.4-.2-.8-.4-1.1-.2-.3-.4-.6-.4-1 0-.8.7-1.5 1.5-1.5H16c3.3 0 6-2.7 6-6 0-4.4-4.5-8-10-8z"/></svg>
+          </div>
+          <div>
+            <h3>Design</h3>
+            <ul class="skill-list mt-16">
+              <li>Canva design</li>
+              <li>Social &amp; blog graphics</li>
+              <li>Basic branding</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tile tile-gradient tile-2x1">
+          <div class="tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          </div>
+          <div>
+            <span class="kicker" style="color:rgba(255,255,255,.75)">Currently learning</span>
+            <h3 class="mt-8">Video editing</h3>
+            <p class="mt-8" style="font-size:0.9rem;">In progress — not finished yet, and that's on purpose.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="note mt-32 narrow" style="max-width:var(--content-w);">
+        <span class="label">Note</span>
+        <p>Everything here was applied on a real, live site — not practiced in isolation.</p>
+      </div>
+
+      <a href="projects.html" class="btn btn-primary mt-32">See these skills in action →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© <span id="year"></span> Sidra Ramzan. Built by hand, hosted for free.</p>
+    <div class="footer-links">
+      <a href="mailto:sidraramzan50@gmail.com">Email</a>
+      <a href="https://thedermadraft.com" target="_blank" rel="noopener">The DermaDraft ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Mobile nav toggle
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('.site-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        nav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // Footer year
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Scroll reveal (skipped entirely if the user prefers reduced motion)
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if (!prefersReduced && 'IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(function (el) { observer.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+});
+
+</script>
+</body>
+</html>
