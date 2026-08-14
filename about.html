@@ -284,6 +284,14 @@ p{ color:var(--ink-soft); }
 .mt-8{ margin-top:8px; } .mt-16{ margin-top:16px; } .mt-24{ margin-top:24px; }
 .mt-32{ margin-top:32px; } .mt-48{ margin-top:48px; } .mt-64{ margin-top:64px; }
 
+.how-i-work-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+@media (max-width:640px){
+  .how-i-work-grid{ grid-template-columns:1fr; }
+  .section{ padding-left:14px; padding-right:14px; }
+  .wrap{ padding-left:0; padding-right:0; }
+  .tile{ padding:22px 18px; }
+}
+
 </style>
 </head>
 <body>
@@ -313,18 +321,18 @@ p{ color:var(--ink-soft); }
 <main>
   <section class="section">
     <div class="wrap">
-      <div class="bento reveal">
-        <div class="tile tile-dark tile-2x1">
+      <div class="reveal" style="display:flex; flex-direction:column; gap:18px;">
+        <div class="tile tile-dark">
           <div>
             <span class="kicker">About</span>
             <h1 class="mt-16" style="font-size:clamp(1.9rem,4vw,2.6rem);">A self-taught creator, not a résumé line.</h1>
           </div>
         </div>
-        <div class="tile tile-indigo tile-1x1">
+        <div class="tile tile-indigo">
           <h3>Since April 2026</h3>
           <p style="font-size:0.88rem;">Running The DermaDraft solo</p>
         </div>
-        <div class="tile tile-coral tile-1x1">
+        <div class="tile tile-coral">
           <h3>4+ areas</h3>
           <p style="font-size:0.88rem;">Content, SEO, WordPress, Design</p>
         </div>
@@ -342,7 +350,7 @@ p{ color:var(--ink-soft); }
 
       <div class="mt-64">
         <h2>How I work</h2>
-        <div class="bento mt-24" style="grid-template-columns:repeat(3,1fr);">
+        <div class="mt-24 how-i-work-grid">
           <div class="tile tile-white tile-1x1">
             <h3>Research first</h3>
             <p style="font-size:0.88rem;">No article gets published on an assumption.</p>
