@@ -284,6 +284,12 @@ p{ color:var(--ink-soft); }
 .mt-8{ margin-top:8px; } .mt-16{ margin-top:16px; } .mt-24{ margin-top:24px; }
 .mt-32{ margin-top:32px; } .mt-48{ margin-top:48px; } .mt-64{ margin-top:64px; }
 
+@media (max-width:640px){
+  .section{ padding-left:14px; padding-right:14px; }
+  .wrap{ padding-left:0; padding-right:0; }
+  .tile{ padding:22px 18px; }
+}
+
 </style>
 </head>
 <body>
@@ -319,8 +325,8 @@ p{ color:var(--ink-soft); }
         <p class="lede mt-16">Have a project, a question, or spotted something to fix on this site? Reach out — I read everything myself.</p>
       </div>
 
-      <div class="bento reveal">
-        <div class="tile tile-dark tile-2x2">
+      <div class="reveal" style="display:flex; flex-direction:column; gap:18px;">
+        <div class="tile tile-dark">
           <div>
             <span class="kicker">Send a message</span>
           </div>
@@ -341,13 +347,13 @@ p{ color:var(--ink-soft); }
           </form>
         </div>
 
-        <div class="tile tile-indigo tile-2x1">
+        <div class="tile tile-indigo">
           <a href="mailto:sidraramzan50@gmail.com" class="tile-link" aria-label="Email"></a>
           <h3>Email</h3>
           <p>sidraramzan50@gmail.com →</p>
         </div>
 
-        <div class="tile tile-coral tile-2x1">
+        <div class="tile tile-coral">
           <a href="https://thedermadraft.com" target="_blank" rel="noopener" class="tile-link" aria-label="The DermaDraft"></a>
           <h3>The DermaDraft</h3>
           <p style="font-size:0.85rem;">Visit the site →</p>
